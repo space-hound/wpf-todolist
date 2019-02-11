@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type ListView}">
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+        <Setter Property="SelectionMode" Value="Single"/>
+    </Style>
+
+    <DataTemplate x:Key="ListViewItem">
+        <DataTemplate.Resources>
+            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" x:Key="TitleBlock">
+                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
+                <Setter Property="Foreground" Value="{Binding StatusVal, Converter={StaticResource StatusToColorConverter}}"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Margin" Value="0, 0, 0, 10"/>
+            </Style>
+
+            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" x:Key="DescriptionBlock">
+                <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+                <Setter Property="Foreground" Value="{StaticResource BlackBrush}"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="10, 0, 0, 10"/>
+            </Style>
+
+            <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" x:Key="StatusBlock">
+                <Setter Property="FontSize" Value="{StaticResource FontSizeSmall}"/>
+                <Setter Property="Foreground" Value="{StaticResource BlackBrush}"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+
+        </DataTemplate.Resources>
+        <StackPanel Orientation="Vertical" Width="300" MaxWidth="300" Margin="15, 20">
+            <TextBlock Text="{Binding Title}"
+                       Style="{StaticResource TitleBlock}"/>
+            <TextBlock Text="{Binding Description}"
+                       Style="{StaticResource DescriptionBlock}"/>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <TextBlock Text="{Binding Status}"
+                       Style="{StaticResource StatusBlock}"/>
+                <Ellipse Width="15" Height="15"
+                         Stroke="{StaticResource BlackBrush}"
+                         StrokeThickness="2"
+                         VerticalAlignment="Center"
+                         Fill="{Binding StatusVal, Converter={StaticResource StatusToColorConverter}}"
+                         Margin="10, 0, 0, 0"/>
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

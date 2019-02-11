@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="TaskDoTo.Controls.TaskItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TaskDoTo.Controls"
+             mc:Ignorable="d">
+    <StackPanel Orientation="Vertical">
+        <TextBox x:Name="TitleItem" 
+                 Tag="Title"
+                 Width="150"
+                 HorizontalAlignment="Right"
+                 Margin="0, 0, 0, 10"/>
+        <TextBox x:Name="DescItem" Tag="Description"
+                 Width="250" Height="100" 
+                 AcceptsReturn="True"
+                 Margin="0, 0, 0, 10"/>
+        <Button x:Name="Add" Content="Add" 
+                Width="150"
+                HorizontalAlignment="Left">
+            <Button.IsEnabled>
+                <MultiBinding Converter="{StaticResource ButtonEnablerConverter}">
+                    <Binding ElementName="TitleItem" Path="Text"></Binding>
+                    <Binding ElementName="DescItem" Path="Text"></Binding>
+                </MultiBinding>
+            </Button.IsEnabled>
+        </Button>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!--================== WINDOW STYLES ==================-->
+    <Style TargetType="{x:Type Window}" x:Key="MainWindow">
+        <Setter Property="Title" Value="TaskDoTo"/>
+        <Setter Property="ResizeMode" Value="CanMinimize"/>
+        <!-- START-UP LOCATION -->
+        <Setter Property="Top" Value="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, 
+            Converter={StaticResource PercentConverter}, ConverterParameter='{StaticResource WindowTop}'}"/>
+        <Setter Property="Left" Value="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, 
+            Converter={StaticResource PercentConverter}, ConverterParameter='{StaticResource WindowLeft}'}"/>
+        <!-- WINDOW SIZE -->
+        <Setter Property="Width" Value="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, 
+            Converter={StaticResource PercentConverter}, ConverterParameter='{StaticResource WindowWidth}'}"/>
+        <Setter Property="Height" Value="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, 
+            Converter={StaticResource PercentConverter}, ConverterParameter='{StaticResource WindowHeight}'}"/>
+    </Style>
+
+</ResourceDictionary>

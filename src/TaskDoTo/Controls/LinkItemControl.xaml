@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="TaskDoTo.Controls.LinkItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TaskDoTo.Controls"
+             mc:Ignorable="d" Width="700">
+    <StackPanel Orientation="Vertical">
+        <Grid Margin="0, 0, 0, 10">
+            <TextBox x:Name="LinkName"
+                    Tag="Link Name"
+                    TextWrapping="NoWrap"
+                    Width="300"
+                    HorizontalAlignment="Left"/>
+            <Button x:Name="AddLink"
+                    Content="Add Link"
+                    HorizontalAlignment="Right">
+                <Button.IsEnabled>
+                    <MultiBinding Converter="{StaticResource ButtonEnablerConverter}">
+                        <Binding ElementName="LinkName" Path="Text"></Binding>
+                        <Binding ElementName="LinkHref" Path="Text"></Binding>
+                    </MultiBinding>
+                </Button.IsEnabled>
+            </Button>
+        </Grid>
+        <TextBox x:Name="LinkHref" 
+                 Tag="Href"
+                 TextWrapping="NoWrap"
+                 Width="700"/>
+    </StackPanel>
+</UserControl>

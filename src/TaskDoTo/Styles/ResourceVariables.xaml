@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:converters="clr-namespace:TaskDoTo.Converters">
+
+
+    <!-- STATIC DOUBLE VALUES (WINDOW SIZE) -->
+    <sys:Double x:Key="WindowWidth">0.9</sys:Double>
+    <sys:Double x:Key="WindowHeight">0.9</sys:Double>
+    <!-- STATIC DOUBLE VALUES (START LOCATION) -->
+    <sys:Double x:Key="WindowTop">0.015</sys:Double>
+    <sys:Double x:Key="WindowLeft">0.015</sys:Double>
+
+    <sys:Double x:Key="wtabOne">0.5</sys:Double>
+    <sys:Double x:Key="wtabTwo">0.4</sys:Double>
+
+    <!-- STATIC DOUBLE VALUES (FONT SIZES) -->
+    <sys:Double x:Key="FontSizeSmall">14</sys:Double>
+    <sys:Double x:Key="FontSizeRegular">16</sys:Double>
+    <sys:Double x:Key="FontSizeLarge">20</sys:Double>
+    <sys:Double x:Key="FontSizeExtraLarge">24</sys:Double>
+
+    <!--================== CONVERTERS DECLARATIONS ==================-->
+    
+    <!-- returns a percent of computer main screen size used for app size -->
+    <converters:PercentConverter x:Key="PercentConverter"/>
+    <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
+    <converters:ButtonEnablerConverter x:Key="ButtonEnablerConverter"/>
+
+
+
+    <!--================== OVERRIDE FONTS ON ALMOST ALL CONTROLS ==================-->
+    <!-- set font family -->
+    <FontFamily x:Key="Consolas">Consolas</FontFamily>
+
+    <!-- everything that inherits from "Control" -->
+    <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
+        <Setter Property="FontFamily" Value="Consolas" />
+    </Style>
+
+    <!-- "TextBlock" does not inherits from "Control" -->
+    <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
+        <Setter Property="FontFamily" Value="Consolas" />
+    </Style>
+
+    
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource BaseStyle}" />
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}" />
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}" />
+    <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}" />
+    <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" />
+
+</ResourceDictionary>

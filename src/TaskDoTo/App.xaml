@@ -1,0 +1,18 @@
+﻿<Application x:Class="TaskDoTo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ColorStyles.xaml"/>
+                <ResourceDictionary Source="Styles/ResourceVariables.xaml"/>
+                <ResourceDictionary Source="Styles/GeneralStyles.xaml"/>
+                <ResourceDictionary Source="Styles/TextTypeStyles.xaml"/>
+                <ResourceDictionary Source="Styles/ButtonTypeStyles.xaml"/>
+                <ResourceDictionary Source="Styles/ListTypeStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
