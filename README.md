@@ -1,27 +1,26 @@
 # wpf-todolist
-simple wpf to do list and link bank that uses sql lite to save it's state - nothing special
 
-</br>
-</br>
+This is a simple to do native app made in `C#` with `Windows Presentation Foundation`.
 
----
+ - It has a simple simple [database](https://github.com/space-hound/wpf-todolist/tree/master/src/TaskDoTo/DataBase) ([SQLite](https://www.sqlite.org/index.html)).
+ - It has 5 [Custom Controls](https://github.com/space-hound/wpf-todolist/tree/master/src/TaskDoTo/Controls).
+ - It has many [Resources](https://github.com/space-hound/wpf-todolist/tree/master/src/TaskDoTo/Styles).
+ - It has 3 [Converters](https://github.com/space-hound/wpf-todolist/tree/master/src/TaskDoTo/Converters).
+ - It uses [OOP Principles](https://github.com/space-hound/wpf-todolist/tree/master/src/TaskDoTo/Models). 
 
- ### code here
-  - [Looking for code?](src/TaskDoTo)
-  
-----
+<hr>
 
- ### pictures here
-  - [Looking for pics?](prev/)
+ - [Code Here!](https://github.com/space-hound/wpf-todolist/tree/master/src/TaskDoTo)
+ - [Images Here!](https://github.com/space-hound/wpf-todolist/tree/master/prev)
 
-----
+<hr>
 
- ### made use of
-  - [SQLite](https://www.sqlite.org/index.html) - THANK YOU!
-  
-----
+This is how it looks:
 
-</br>
-</br>
+<p align="center">
+	<img src="https://raw.githubusercontent.com/space-hound/wpf-todolist/master/prev/todolist-prev-1.png" alt="to do list">
+</p>
 
-`June 2018 - Visual Studio Community 2017 - .net version at that time`
+<p align="center">
+	<img src="https://raw.githubusercontent.com/space-hound/wpf-todolist/master/prev/todolist-prev-2.png" alt="link bank">
+</p>
