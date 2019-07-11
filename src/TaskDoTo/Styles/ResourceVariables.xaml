@@ -5,7 +5,7 @@
 
 
     <!-- STATIC DOUBLE VALUES (WINDOW SIZE) -->
-    <sys:Double x:Key="WindowWidth">0.9</sys:Double>
+    <sys:Double x:Key="WindowWidth">0.95</sys:Double>
     <sys:Double x:Key="WindowHeight">0.9</sys:Double>
     <!-- STATIC DOUBLE VALUES (START LOCATION) -->
     <sys:Double x:Key="WindowTop">0.015</sys:Double>
